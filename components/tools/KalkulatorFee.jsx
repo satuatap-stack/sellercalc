@@ -145,7 +145,16 @@ export default function App() {
         .animate-in { animation: fadeUp 0.4s ease forwards; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-        .highlight-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 10px; padding: 16px; }
+        .highlight-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 10px; padding: 16px; transition: all 0.2s; }
+        .highlight-card:hover { border-color: #f5a623 !important; transform: translateY(-2px); }
+        .recommendation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        @media (max-width: 640px) {
+          .highlight-card { padding: 12px 6px !important; }
+          .highlight-card div:first-child { font-size: 10px !important; }
+          .highlight-card div:nth-child(2) { font-size: 14px !important; }
+          .highlight-card div:last-child { font-size: 9px !important; }
+          .recommendation-grid { gap: 6px !important; }
+        }
         ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: var(--bg-base); } ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
         input { border-color: var(--border-strong) !important; }
         label { color: var(--text-muted) !important; }
@@ -283,7 +292,7 @@ export default function App() {
         {/* Rekomendasi Harga */}
         <div className="card">
           <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 13, marginBottom: 14, letterSpacing: "0.05em", textTransform: "uppercase", color: "#6b6a78" }}>💡 Rekomendasi Harga Jual</div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+          <div className="recommendation-grid">
             {[
               { label: "Harga Minimum", desc: "Tidak rugi", value: result.hargaMin, color: "#ef4444" },
               { label: "Target 20%", desc: "Margin sehat", value: result.hargaTarget20, color: "#f59e0b" },

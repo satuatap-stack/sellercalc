@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "../../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -27,7 +27,9 @@ const MENU = [
       { label: "Riset Produk", icon: "🧪", path: "riset", premium: true },
       { label: "Profitability Ranker", icon: "🏆", path: "ranker", premium: true },
       { label: "Konversi Rate", icon: "📉", path: "konversi", premium: true },
+      { label: "Marketplace Analyzer", icon: "📊", path: "analyzer", premium: true },
       { label: "Budget Iklan", icon: "💸", path: "budget", premium: true },
+      { label: "Analisa Data", icon: "📈", path: "analist", premium: true },
     ]
   },
 ];
@@ -142,7 +144,7 @@ export default function Layout({ children, isPremium = false, activePath = "dash
       <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div style={{ padding: "24px 16px 20px", borderBottom: `1px solid ${vars.borderSubtle}`, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 20, color: vars.accent }}>SELLERCALC</div>
+            <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 20, color: vars.accent }}>Seller CUPU</div>
             <div style={{ fontSize: 10, color: vars.textMuted, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 2 }}>Seller Assistant</div>
           </div>
           <button onClick={toggleTheme} style={{ background: "transparent", border: `1px solid ${vars.borderStrong}`, borderRadius: "50%", width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: vars.textMuted }}>
@@ -189,7 +191,7 @@ export default function Layout({ children, isPremium = false, activePath = "dash
       <div className="main-content">
         <div className="hamburger" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", borderBottom: `1px solid ${vars.borderSubtle}`, background: vars.bg, position: "sticky", top: 0, zIndex: 50, transition: "background 0.3s ease" }}>
           <button onClick={() => setSidebarOpen(true)} style={{ background: "transparent", border: `1px solid ${vars.borderStrong}`, borderRadius: 8, padding: "6px 12px", color: vars.textMain, cursor: "pointer", fontSize: 16 }}>☰</button>
-          <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 16, color: vars.accent }}>SELLERCALC</div>
+          <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 16, color: vars.accent }}>Seller CUPU</div>
           <button onClick={toggleTheme} style={{ background: "transparent", border: `1px solid ${vars.borderStrong}`, borderRadius: 8, padding: "6px 10px", color: vars.textMuted, cursor: "pointer", fontSize: 14 }}>
             {theme === "dark" ? "☀️" : "🌙"}
           </button>

@@ -25,6 +25,9 @@ import RisetProduk from '../components/tools/RisetProduk';
 import SimulasiBundle from '../components/tools/SimulasiBundle';
 import SimulasiDiskon from '../components/tools/SimulasiDiskon';
 import TargetOmzet from '../components/tools/TargetOmzet';
+import MarketplaceAnalyzer from '../components/tools/MarketplaceAnalyzer';
+import marketplaceanalytics from '../components/tools/marketplace-analytics';
+
 
 const TOOLS: Record<string, { component: any; label: string; icon: any; color: string; desc: string }> = {
   fee: { component: KalkulatorFee, label: "Kalkulator Fee", icon: Calculator, color: "bg-blue-500", desc: "Hitung fee marketplace Shopee & TikTok" },
@@ -37,7 +40,9 @@ const TOOLS: Record<string, { component: any; label: string; icon: any; color: s
   riset: { component: RisetProduk, label: "Riset Produk", icon: Zap, color: "bg-yellow-500", desc: "Analisis kelayakan produk baru" },
   ranker: { component: ProfitabilityRanker, label: "Profit Ranker", icon: Award, color: "bg-amber-500", desc: "Ranking produk paling cuan Anda" },
   konversi: { component: KonversiRate, label: "Konversi Rate", icon: BarChart3, color: "bg-teal-500", desc: "Analisis & benchmark CR toko" },
+  analyzer: { component: MarketplaceAnalyzer, label: "Market Data Hub", icon: LayoutIcon, color: "bg-fuchsia-500", desc: "Analisis terintegrasi Shopee & TikTok Shop" },
   budget: { component: BudgetIklan, label: "Budget Iklan", icon: LayoutIcon, color: "bg-violet-500", desc: "Alokasi budget iklan per produk" },
+  analist: { component: marketplaceanalytics, label: "Analisa data", icon: BarChart3, color: "bg-fuchsia-500", desc: "Analisis data Shopee & TikTok Shop" },
 };
 
 function Dashboard({ onNavigate }: { onNavigate: (p: string) => void }) {

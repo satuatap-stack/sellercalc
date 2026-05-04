@@ -89,7 +89,7 @@ export default function App() {
     const totalIklan = iklanPerUnit * result.units;
     const totalHPPAll = form.hpp * result.units;
     const lines = [
-      "===== SELLERCALC — TARGET OMZET =====",
+      "===== Seller CUPU — TARGET OMZET =====",
       `Platform     : ${platform.toUpperCase()}`,
       `Target Profit: ${fmt(form.targetProfit)}`,
       `Periode      : ${form.hari} hari`,
